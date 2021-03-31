@@ -1,0 +1,24 @@
+#
+# Copyright 2021, Matthew Ahrenstein, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: matt@ahrenstein.com
+#
+# See LICENSE
+
+version: '2'
+services:
+  bankless-bot:
+    container_name: bankless-bot
+    image: ahrenstein/bankless-bot:latest
+    volumes:
+      - ./config:/config
+    restart: always
+  bitcoin-bot:
+    container_name: btc-bankless-bot
+    image: ahrenstein/bankless-bot:latest
+    volumes:
+      - ./config:/config
+    command: ["python", "-u", "/app/bankless_bot.py", "-c", "/config/credentials.json",
+              "-t", "eth", "--currency", "BTC", "--price", "150.00"]
+    restart: always
