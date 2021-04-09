@@ -72,7 +72,7 @@ Donations
 Any and all donations are greatly appreciated.  
 I have GitHub Sponsors configured however I happily prefer cryptocurrency:
 
-ETH/ERC20s: 0x288f3d3df1c719176f0f6e5549c2a3928d27d1c1  
+ETH/ERC20s: ahrenstein.eth (0x288f3d3df1c719176f0f6e5549c2a3928d27d1c1)  
 BTC: 3HrVPPwTmPG8LKBt84jbQrVjeqDbM1KyEb
 
 Special Thanks
