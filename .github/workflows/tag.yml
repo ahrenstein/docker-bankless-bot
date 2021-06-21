@@ -1,0 +1,26 @@
+name: 'Deploy container to named tag'
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build the Docker image
+        env:
+          DOCKERHUB: ${{ secrets.DOCKERHUB_USER }}
+          DOCKERHUB_KEY: ${{ secrets.DOCKERHUB_KEY }}
+        run: |
+          ls -l
+          echo "Logging in to Docker Hub..."
+          docker login -u $DOCKERHUB_USER -p $DOCKERHUB_KEY
+          echo "Building container..."
+          docker build -f Dockerfile -t ahrenstein/bankless-bot:${GITHUB_REF/refs\/tags\//} .
+          echo "Pushing container to Docker Hub..."
+          docker push ahrenstein/bankless-bot:${GITHUB_REF/refs\/tags\//}
+          echo "Done!"
