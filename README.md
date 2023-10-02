@@ -1,3 +1,7 @@
+Deprecated
+==========
+This bot was fun to run but for now I'm archiving this repo. This bot was not used heavily and the changes to Twitter's API have resulted in this not being worth maintaining for now.
+
 Bankless ETH Buying Bot
 =======================
 This bot is designed to buy ETH on Coinbase Pro every time one of the following Twitter accounts calls ETH "Ultra Sound Money"
